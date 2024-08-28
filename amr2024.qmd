@@ -2702,20 +2702,23 @@ df_bridge <- df_bridge[df_bridge$DECK_CON != "N/A",]
 point_data <- data.frame(
   name = df_bridge$DECK_CON,
   lat = df_bridge$LATDD,
-  lon = df_bridge$LONGDD
+  lon = df_bridge$LONGDD, 
+  feature = df_bridge$FEATURES_D, 
+  facility = df_bridge$FACILITY_C, 
+  location = df_bridge$LOCATION_0
 )
 
 # Continuous palette
 ord <- factor(df_bridge$DECK_CON, levels = c('Good', 'Fair', 'Poor'))
 pal <- colorFactor(palette = c("limegreen","darkgreen",'darkorange'), levels = ord, ordered = TRUE)
-labs <- paste("<b>Deck Condition:</b> ", df_bridge$DECK_CON, "<br><b>Bridge Condition:</b>", df_bridge$BRIDGE_CON)
+labs <- paste("<b>Deck Condition:</b> ", df_bridge$DECK_CON, "<br><b>Bridge Condition:</b>", df_bridge$BRIDGE_CON, "<br><b>Feature:  </b>",df_bridge$FEATURES_D,"<br><b>Facility: </b>",df_bridge$FACILITY_C,"<br><b>Location: </b>",df_bridge$LOCATION_0) 
 
 # Create the Leaflet map
 leaflet(data = df_bridge) %>%
   addTiles() %>%  # Add default OpenStreetMap map tiles
   addProviderTiles(providers$CartoDB.Positron) %>%
   addCircleMarkers(~LONGDD, ~LATDD, # Use the Longitude and Latitude columns
-                   popup = ~paste0("<b>Deck Condition: </b>", DECK_CON, "<br><b>Bridge Condition: </b>",BRIDGE_CON), 
+                   popup = ~paste0("<b>Deck Condition: </b>", DECK_CON, "<br><b>Bridge Condition: </b>",BRIDGE_CON, "<br><b>Feature:  </b>",FEATURES_D,"<br><b>Facility: </b>",FACILITY_C,"<br><b>Location: </b>",LOCATION_0), 
                    radius=5,label = lapply(labs, htmltools::HTML), color = ~pal(DECK_CON), weight = 1, 
                    fillOpacity = 0.8) %>%
   setView(lng = -81.655651, lat = 30.232184, zoom = 9) %>% 
