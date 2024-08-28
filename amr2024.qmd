@@ -396,6 +396,11 @@ Including visitors from within the region, St. Augustine hosts nearly 6 million 
 ```{r}
 table_options <- function() {
   list(
+    rowCallback = DT::JS(
+      "function(row, data, index) {
+        $('td:eq(0)', row).html(index + 1);
+      }"
+    ),
     deferRender = TRUE,
     searching = FALSE,
     editable = TRUE,
