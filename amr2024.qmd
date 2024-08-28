@@ -1107,7 +1107,7 @@ hchart(df_ton_ship, "column", hcaes(x = year, y = tons, group = port)) %>%
     dataLabels = list(
       enabled = TRUE,
       formatter = JS("function() {
-  return Highcharts.numberFormat(this.y / 1e6, 1) + ' Mil';}")
+  return Highcharts.numberFormat(this.y / 1e6, 1) + 'M';}")
     )
   )) %>%
   hc_yAxis(
