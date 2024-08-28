@@ -2163,7 +2163,9 @@ Source: [FDOT Sidewalks and Gaps TDA](https://gis-fdot.opendata.arcgis.com/datas
 
 ```{r, message=FALSE}
 # Load your GeoJSON file
-geojson_data <- st_read("~/GitHub/AnnualMobilityReport2024/data/Sidewalks_and_Gaps_NF.geojson", quiet = TRUE)  %>% 
+geojson_data_unfiltered <- st_read("~/GitHub/AnnualMobilityReport2024/data/Sidewalks_and_Gaps_NF.geojson", quiet = TRUE)
+geojson_data <- geojson_data_unfiltered %>%
+  filter(RDACCESS != 1) %>%
   st_transform(crs = 4326)
 
 # Create a custom color
