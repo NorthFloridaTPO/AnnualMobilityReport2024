@@ -29,6 +29,7 @@ library(RColorBrewer)
 library(scales)
 library(htmlwidgets)
 library(data.table)
+library(htmltools)
 ```
 
 Understanding the trends and conditions occurring in the North Florida will allow planners and engineers to prioritize resources more effectively as part of the North Florida Transportation Planning Organization’s (TPO) Congestion Management Process. The data presented are an essential part of making evidence-based decisions for the investment in mobility in North Florida. The data presented focuses on Clay, Duval, Nassau and St. Johns counties for the years 2018-2022 and 2019-2023 when available.
@@ -2043,7 +2044,7 @@ leaflet() %>%
 
 ## Impacts of Investments on the Natural Environment
 
-Florida’s Efficient Transportation Decision Making (ETDM) process is a procedure used to look into transportation projects and consider their environmental impacts. The stakeholders involved are usually the MPOs in the surrounding area. The ETDM manual can be found on the [FDOT webpage.](https://www.fdot.gov/environment/pubs/etdm/etdmmanual.shtm){target="_blank"}
+Florida’s Efficient Transportation Decision Making (ETDM) process is a procedure used to look into transportation projects and consider their environmental impacts. The stakeholders involved are usually the MPOs in the surrounding area. The ETDM manual can be found on the [FDOT webpage](https://www.fdot.gov/environment/pubs/etdm/etdmmanual.shtm){target="_blank"}. More information on the projects highlighted in the map can be found at the links.
 
 Source: [Environmental Screening Tool](https://etdmpub.fla-etat.org/est/#){target="_blank"} and [FDOT 5 Year Work Program Meta Data](https://fgdl.org/meta/FDOT_WP_2023.xml){target="_blank"}
 
@@ -2057,18 +2058,19 @@ geojson_data <- st_read("~/GitHub/AnnualMobilityReport2024/data/fdot_wp.geojson"
 # Create a custom color generating function
 # Continuous palette
 pal <- colorFactor(palette = "Set1", domain = geojson_data$DESCRIPT)
-labs <- as.list(geojson_data$DESCRIPT)
+labs <- paste0("<b>Description: </b>", geojson_data$DESCRIPT, "<br><b>County: </b>", geojson_data$COUNTY_NAME, "<br><b>Location: </b>", geojson_data$DESCRIPTION)
 
 # Create the Leaflet map
 leaflet() %>%
   addTiles() %>%  # Add default OpenStreetMap map tiles
   addProviderTiles(providers$CartoDB.Positron) %>%
   setView(lng = -82.055651, lat = 30.232184, zoom = 9)%>%
-  addPolylines(data = geojson_data, color = ~pal(DESCRIPT), popup = ~paste(DESCRIPT), opacity = 0.8, label = labs)%>%
+  addPolylines(data = geojson_data, color = ~pal(DESCRIPT), popup = ~paste0("<b>Description: </b>", geojson_data$DESCRIPT, "<br><b>County: </b>", geojson_data$COUNTY_NAME, "<br><b>Location: </b>", geojson_data$DESCRIPTION), opacity = 0.8, label = ~lapply(labs, htmltools::HTML))%>%
   addLegend("bottomleft", 
             colors = pal(unique(geojson_data$DESCRIPT)), 
             labels = unique(geojson_data$DESCRIPT),
             opacity = 1.0,
+            layerId = "legend",
             title = "Description") %>% 
   addEasyButton(
     easyButton(
