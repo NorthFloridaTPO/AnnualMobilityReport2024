@@ -1934,7 +1934,7 @@ geojson_data <- st_read("~/GitHub/AnnualMobilityReport2024/data/TransitAll_Route
   st_transform(crs = 4326)
 
 # Create a custom color
-pal <- colorFactor(palette = "viridis", domain = geojson_data$Admin)
+pal <- colorFactor(palette = c("blue", "black", "green", "red", "orange"), domain = geojson_data$Admin)
 labs <- as.list(geojson_data$Admin)
 
 # Create the Leaflet map
@@ -1942,7 +1942,7 @@ leaflet() %>%
   addTiles() %>%  # Add default OpenStreetMap map tiles
   addProviderTiles(providers$CartoDB.Positron) %>%
   setView(lng = -81.855651, lat = 30.132184, zoom = 9)%>%
-  addPolylines(data = geojson_data, color = ~pal(Admin), popup = ~paste(Admin), opacity = 0.8, label = labs)%>%
+  addPolylines(data = geojson_data, color = ~pal(Admin), popup = ~paste(Admin), opacity = 0.8, label = labs, weight = 1)%>%
   addLegend("bottomleft", 
             colors = pal(unique(geojson_data$Admin)), 
             labels = unique(geojson_data$Admin),
