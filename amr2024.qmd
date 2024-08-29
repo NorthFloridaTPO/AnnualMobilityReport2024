@@ -2160,7 +2160,7 @@ leaflet() %>%
   )
 ```
 
-## Pedestrian Connectivity
+## Pedestrian Connectivity 
 
 The FDOT aims to provide 100% coverage of the state highway system for bicycles and pedestrians where appropriate. Based on the FDOT roadway characteristics inventory, the average pedestrian facility coverage over the four counties within the North Florida TPO area is 65.62% for 2022. Year over year, the total pedestrian coverage within the North Florida TPO region generally increases, resulting in increased sidewalk mileage.
 
@@ -2169,6 +2169,7 @@ A map of the FDOT sidewalks and gaps in the region is provided below.
 Source: [FDOT Sidewalks and Gaps TDA](https://gis-fdot.opendata.arcgis.com/datasets/4c970deb696d451283e8e4b7f4464667_0/explore?location=30.304647%2C-81.573657%2C9.76){target="_blank"}
 
 ```{r, message=FALSE}
+# THOMAS: ALL WE HAVE IS COUNTY 
 # Load your GeoJSON file
 geojson_data_unfiltered <- st_read("~/GitHub/AnnualMobilityReport2024/data/Sidewalks_and_Gaps_NF.geojson", quiet = TRUE)
 geojson_data <- geojson_data_unfiltered %>%
