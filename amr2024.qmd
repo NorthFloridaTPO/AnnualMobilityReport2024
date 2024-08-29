@@ -2223,7 +2223,7 @@ leaflet() %>%
 
 ```
 
-# Preservation and Maintanence
+# Preservation and Maintenance
 
 ## Pavement Condition on Primary Freight Corridors
 
