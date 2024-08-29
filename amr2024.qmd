@@ -1391,12 +1391,15 @@ generateColor <- function(value) {
 # Apply the custom color function to your data
 geojson_data$colors <- sapply(geojson_data$lottr, generateColor)
 
+# Create hover-over labels 
+labs <- paste0("<b>Road Name: </b>", geojson_data$RoadName, "<br><b>County: </b>", geojson_data$County, "<br><b>LOTTR: </b>", geojson_data$lottr)
+
 # Create the Leaflet map
 leaflet() %>%
   addTiles() %>%  # Add default OpenStreetMap map tiles
   addProviderTiles(providers$CartoDB.Positron) %>%
   setView(lng = -81.655651, lat = 30.232184, zoom = 9)%>%
-  addPolylines(data = geojson_data, color = ~colors,popup = ~paste(lottr), opacity = 0.8)%>%
+  addPolylines(data = geojson_data, color = ~colors, popup = ~paste("<b>Road Name: </b>", geojson_data$RoadName, "<br><b>County: </b>", geojson_data$County, "<br><b>LOTTR: </b>", lottr), opacity = 0.8, label = ~lapply(labs, htmltools::HTML))%>%
   addEasyButton(
     easyButton(
       icon = 'fa-map-marker',
@@ -1472,12 +1475,15 @@ generateColor <- function(value) {
 # Apply the custom color function to your data
 geojson_data$colors <- sapply(geojson_data$tttr, generateColor)
 
+# Create hover-over labels 
+labs <- paste0("<b>Road Name: </b>", geojson_data$RoadName, "<br><b>County: </b>", geojson_data$County, "<br><b>TTTR: </b>", geojson_data$tttr)
+
 # Create the Leaflet map
 leaflet() %>%
   addTiles() %>%  # Add default OpenStreetMap map tiles
   addProviderTiles(providers$CartoDB.Positron) %>%
   setView(lng = -81.655651, lat = 30.232184, zoom = 9)%>%
-  addPolylines(data = geojson_data, color = ~colors,popup = ~paste(tttr), opacity = 0.8)%>%
+  addPolylines(data = geojson_data, color = ~colors,popup = ~paste("<b>Road Name: </b>", geojson_data$RoadName, "<br><b>County: </b>", geojson_data$County, "<br><b>TTTR: </b>", tttr), opacity = 0.8, label = ~lapply(labs, htmltools::HTML))%>%
   addEasyButton(
     easyButton(
       icon = 'fa-map-marker',
@@ -1544,12 +1550,15 @@ pal <- colorFactor(palette = c('darkgreen','forestgreen',"orange", 'red','darkre
 # Apply the custom color function to your data
 geojson_data$colors <- sapply(geojson_data$LOS_Peak_H, pal)
 
+# Create hover-over labels 
+labs <- paste0("<b>Facility: </b>", geojson_data$Facility, "<br><b>County: </b>", geojson_data$COUNTY, "<br><b>LOS Peak Hour: </b>", geojson_data$LOS_Peak_H)
+
 # Create the Leaflet map
 leaflet() %>%
   addTiles() %>%  # Add default OpenStreetMap map tiles
   addProviderTiles(providers$CartoDB.Positron) %>%
   setView(lng = -81.655651, lat = 30.232184, zoom = 9)%>%
-  addPolylines(data = geojson_data, color = ~colors,popup = ~paste(LOS_Peak_H), opacity = 0.8)%>%
+  addPolylines(data = geojson_data, color = ~colors,popup = ~paste("<b>Facility: </b>", geojson_data$Facility, "<br><b>County: </b>", geojson_data$COUNTY, "<br><b>LOS Peak Hour: </b>", LOS_Peak_H), opacity = 0.8, label = ~lapply(labs, htmltools::HTML))%>%
   addEasyButton(
     easyButton(
       icon = 'fa-map-marker',
@@ -1940,14 +1949,16 @@ geojson_data <- st_read("~/GitHub/AnnualMobilityReport2024/data/TransitAll_Route
 
 # Create a custom color
 pal <- colorFactor(palette = c("blue", "black", "green", "red", "orange"), domain = geojson_data$Admin)
-labs <- as.list(geojson_data$Admin)
+
+# Create hover-over labels 
+labs <- paste0("<b>Agency: </b>", geojson_data$Admin, "<br><b>County: </b>", geojson_data$COUNTYNAME)
 
 # Create the Leaflet map
 leaflet() %>%
   addTiles() %>%  # Add default OpenStreetMap map tiles
   addProviderTiles(providers$CartoDB.Positron) %>%
   setView(lng = -81.855651, lat = 30.132184, zoom = 9)%>%
-  addPolylines(data = geojson_data, color = ~pal(Admin), popup = ~paste(Admin), opacity = 0.8, label = labs, weight = 1)%>%
+  addPolylines(data = geojson_data, color = ~pal(Admin), popup = ~paste("<b>Agency: </b>", geojson_data$Admin, "<br><b>County: </b>", geojson_data$COUNTYNAME), opacity = 0.8, label = ~lapply(labs, htmltools::HTML), weight = 1)%>%
   addLegend("bottomleft", 
             colors = pal(unique(geojson_data$Admin)), 
             labels = unique(geojson_data$Admin),
@@ -1987,12 +1998,15 @@ generateColor <- function(value) {
 # Apply the custom color function to your data
 geojson_data$colors <- sapply(geojson_data$Bike_LTS, generateColor)
 
+# Create hover-over labels 
+labs <- paste0("<b>Facility: </b>", geojson_data$Facility, "<br><b>County: </b>", geojson_data$COUNTY, "<br><b>Bike LoTS: </b>", geojson_data$Bike_LTS)
+
 # Create the Leaflet map
 leaflet() %>%
   addTiles() %>%  # Add default OpenStreetMap map tiles
   addProviderTiles(providers$CartoDB.Positron) %>%
   setView(lng = -81.655651, lat = 30.232184, zoom = 9)%>%
-  addPolylines(data = geojson_data, color = ~colors,popup = ~paste(Bike_LTS), opacity = 0.8)%>%
+  addPolylines(data = geojson_data, color = ~colors,popup = ~paste(labs), opacity = 0.8, label = ~lapply(labs, htmltools::HTML))%>%
   addEasyButton(
     easyButton(
       icon = 'fa-map-marker',
@@ -2026,11 +2040,14 @@ generateColor <- function(value) {
 # Apply the custom color function to your data
 geojson_data$colors <- sapply(geojson_data$Ped_LTS, generateColor)
 
+# Create hover-over labels 
+labs <- paste0("<b>Facility: </b>", geojson_data$Facility, "<br><b>County: </b>", geojson_data$COUNTY, "<br><b>Pedestrian LoTS: </b>", geojson_data$Ped_LTS)
+
 leaflet() %>%
   addTiles() %>%  # Add default OpenStreetMap map tiles
   addProviderTiles(providers$CartoDB.Positron) %>%
   setView(lng = -81.655651, lat = 30.232184, zoom = 9)%>%
-  addPolylines(data = geojson_data, color = ~colors,popup = ~paste(Ped_LTS), opacity = 0.8)%>%
+  addPolylines(data = geojson_data, color = ~colors,popup = ~paste(labs), opacity = 0.8, label = ~lapply(labs, htmltools::HTML))%>%
   addEasyButton(
     easyButton(
       icon = 'fa-map-marker',
@@ -2140,12 +2157,15 @@ custom_palette <- c("#FF33A1", "#2ea338")
 # Continuous palette
 pal <- colorFactor(palette = custom_palette, domain = geojson_data$Scale)
 
+# Create hover-over labels 
+labs <- paste0("<b>Trail Name: </b>", geojson_data$Name, "<br><b>County: </b>", geojson_data$County, "<br><b>Scale: </b>", geojson_data$Scale)
+
 # Create the Leaflet map
 leaflet() %>%
   addTiles() %>%  # Add default OpenStreetMap map tiles
   addProviderTiles(providers$CartoDB.Positron) %>%
   setView(lng = -81.655651, lat = 30.232184, zoom = 9)%>%
-  addPolylines(data = geojson_data, color = ~pal(Scale), popup = ~paste(Scale), opacity = 1.0)%>%
+  addPolylines(data = geojson_data, color = ~pal(Scale), popup = ~paste(labs), opacity = 1.0, label = ~lapply(labs, htmltools::HTML))%>%
   addLegend("topright", 
             colors = pal(unique(geojson_data$Scale)), 
             labels = unique(geojson_data$Scale),
@@ -2160,7 +2180,7 @@ leaflet() %>%
   )
 ```
 
-## Pedestrian Connectivity 
+## Pedestrian Connectivity
 
 The FDOT aims to provide 100% coverage of the state highway system for bicycles and pedestrians where appropriate. Based on the FDOT roadway characteristics inventory, the average pedestrian facility coverage over the four counties within the North Florida TPO area is 65.62% for 2022. Year over year, the total pedestrian coverage within the North Florida TPO region generally increases, resulting in increased sidewalk mileage.
 
@@ -2169,7 +2189,6 @@ A map of the FDOT sidewalks and gaps in the region is provided below.
 Source: [FDOT Sidewalks and Gaps TDA](https://gis-fdot.opendata.arcgis.com/datasets/4c970deb696d451283e8e4b7f4464667_0/explore?location=30.304647%2C-81.573657%2C9.76){target="_blank"}
 
 ```{r, message=FALSE}
-# THOMAS: ALL WE HAVE IS COUNTY 
 # Load your GeoJSON file
 geojson_data_unfiltered <- st_read("~/GitHub/AnnualMobilityReport2024/data/Sidewalks_and_Gaps_NF.geojson", quiet = TRUE)
 geojson_data <- geojson_data_unfiltered %>%
@@ -2180,14 +2199,15 @@ geojson_data <- geojson_data_unfiltered %>%
 pal <- colorFactor(palette = c("darkgreen","red", "gold", "gold"), 
                    domain = c("Gap", "Left", "Right","Composite"))
 
-labs <- as.list(geojson_data$RDWYSIDE_LNG)
+# Create hover-over labels 
+labs <- paste0("<b>County: </b>", geojson_data$COUNTY, "<br><b>Roadway Side: </b>", geojson_data$RDWYSIDE_LNG)
 
 # Create the Leaflet map
 leaflet() %>%
   addTiles() %>%  # Add default OpenStreetMap map tiles
   addProviderTiles(providers$CartoDB.Positron) %>%
   setView(lng = -81.655651, lat = 30.232184, zoom = 9)%>%
-  addPolylines(data = geojson_data, color = ~pal(RDWYSIDE_LNG),popup = ~paste(RDWYSIDE_LNG), opacity = 0.8,label = labs)%>%
+  addPolylines(data = geojson_data, color = ~pal(RDWYSIDE_LNG),popup = ~paste(labs), opacity = 0.8,label = ~lapply(labs, htmltools::HTML))%>%
   addLegend("bottomright", 
             colors = pal(unique(geojson_data$RDWYSIDE_LNG)), 
             labels = unique(geojson_data$RDWYSIDE_LNG),
