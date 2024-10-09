@@ -32,7 +32,7 @@ library(data.table)
 library(htmltools)
 ```
 
-Understanding the trends and conditions occurring in the North Florida will allow planners and engineers to prioritize resources more effectively as part of the North Florida Transportation Planning Organization’s (TPO) Congestion Management Process. The data presented are an essential part of making evidence-based decisions for the investment in mobility in North Florida. The data presented focuses on Clay, Duval, Nassau and St. Johns counties for the years 2018-2022 and 2019-2023 when available.
+Understanding the trends and conditions occurring in North Florida will allow planners and engineers to prioritize resources more effectively as part of the North Florida Transportation Planning Organization’s (TPO) Congestion Management Process. The data presented are an essential part of making evidence-based decisions for the investment in mobility in North Florida. The data presented focuses on Clay, Duval, Nassau and St. Johns counties for the years 2018-2022 and 2019-2023 when available.
 
 # People
 
@@ -1768,14 +1768,14 @@ hchart(df_travel, "column", hcaes(x = County, y = Speed, group = Year)) %>%
 
 ## Incident Clearance Times
 
-The Florida Department of Transportation, law enforcement, emergency personnel and the local coroner’s office can be engaged in incidents. During some incidents, the time to open the road to traffic and restore or clear the road to normal traffic conditions can be impacted by the conditions of the crash that are beyond FDOT’s or law enforcement’s control. For example:
+The Florida Department of Transportation, law enforcement, emergency personnel, and the local coroner’s office can be engaged in incidents. During some incidents, the time to open the road to traffic and restore or clear the road to normal traffic conditions can be impacted by the conditions of the crash that are beyond FDOT’s or law enforcement’s control. For example:
 
 -   Emergency response personnel to respond and treat injured persons.
 -   Specialized response teams must remove hazardous materials before the road can be opened to traffic.
 -   The local coroner must investigate the scene if a fatality occurs. The time to open the road to traffic is typically one hour when a fatality occurs.
 -   The Florida Department of Transportation and law enforcement agencies work to open the road to traffic and restore the traffic operations as soon
 
-The goals is to maintain or reduce the time to open roads tonormal traffic following an event.
+The goals is to maintain or reduce the time to open roads to normal traffic following an event.
 
 ::: {layout="[ [1,1] ]"}
 ```{r}
@@ -2141,9 +2141,9 @@ datatable(
 
 ## Trail Connectivity
 
-The North Florida TPO published the Northeast Florida Regional Multi-Use Trail Master Plan in 2019 which addresses the regional trail network and how funding could be applied to projects to expand the multi-use paths within the region. Funding opportunities such as Shared Use Network (SUN) Trail Funding were considered. Existing trails within the region total approximately 121 miles. A trail network of approximately 570 miles is proposed. Maps were taken from the Multi-Use Trail Master Plan. The map below shoes the existing and proposed trails identified within the North Florida TPO network.
+The North Florida TPO published the Northeast Florida Regional Multi-Use Trail Master Plan in 2019 which addresses the regional trail network and how funding could be applied to projects to expand the multi-use paths within the region. Funding opportunities such as Shared Use Network (SUN) Trail Funding were considered. Existing trails within the region total approximately 121 miles. A trail network of approximately 570 miles is proposed. Maps were taken from the Multi-Use Trail Master Plan. The map below shows the existing and proposed trails identified within the North Florida TPO network.
 
-Source: [NFTPO Regional Multi-use Trail Master Plan](https://northfloridatpo.com/uploads/Studies/2018-19-Regional-Multi-use-Trail-Master-Plan-Final21.pdf){target="_blank"}
+Source: [NFTPO Regional Multi-Use Trail Master Plan](https://northfloridatpo.com/uploads/Studies/2018-19-Regional-Multi-use-Trail-Master-Plan-Final21.pdf){target="_blank"}
 
 ```{r}
 
@@ -2227,7 +2227,7 @@ leaflet() %>%
 
 ## Pavement Condition on Primary Freight Corridors
 
-Pavement condition within the study area is evaluated by the FDOT. The areas reviewed include major roads such as interstates and highways with U.S. or state road numbers. FDOT standard for acceptable pavement is set at the 80% mark on the SHS. According to data from the FDOT state materials office, a pavement condition survey program showed that for 2023, District 2 had 72.7% of SHS pavement meeting FDOT standards. The North Florida TPO area has data from as recent as 2022. For 2022, the percentage of interstate pavement in poor condition was 0.2% which is an improvement of 0.1% from the previous year. The percentage of non-interstate NHS pavement in poor condition was 1.6% which was about the same as the previous year.
+Pavement condition within the study area is evaluated by the FDOT. The areas reviewed include major roads such as interstates and highways with U.S. or state road numbers. FDOT standard for acceptable pavement is set at the 80% mark on the SHS. According to data from the FDOT state materials office, a pavement condition survey program showed that for 2023, District 2 had 72.7% of SHS pavement meeting FDOT standards. The North Florida TPO area has data from as recent as 2022. For 2022, the percentage of interstate pavement in poor condition was 0.2% which well below the target of less than 5%. The percentage of non-interstate NHS pavement in poor condition was 1.6% which was about the same as the previous year.
 
 ```{r}
 table_options <- function() {
@@ -2683,7 +2683,7 @@ hchart(df_roi, "column", hcaes(x = Mode, y = Benefit)) %>%
 
 ## PM1 Safety (All Public Roads)
 
-The safety performance measures help to assess fatalities and serious injuries on all public roads regardless of ownership or functional classification. As required by 23 CFR 490, the North Florida TPO adopted targets for number of fatalities, number of serious injuries, fatality rate, serious injury rate and total number of non-motorized fatalities and serious injuries. These targets align with the Florida Department of Transportation’s adopted targets.
+The safety performance measures help to assess fatalities and serious injuries on all public roads regardless of ownership or functional classification. As required by 23 CFR 490, the North Florida TPO adopted targets for number of fatalities, number of serious injuries, fatality rate, serious injury rate and total number of non-motorized fatalities and serious injuries. These targets are all zero and align with the Florida Department of Transportation’s adopted targets.
 
 ```{r}
 table_options <- function() {
@@ -2855,7 +2855,7 @@ datatable(df_noninter_pave,options = c(table_options(), list(pageLength = 5)),
 ```
 :::
 
-### State Targets
+### State of Florida and North Florida TPO Targets
 
 ```{r}
 table_options <- function() {
