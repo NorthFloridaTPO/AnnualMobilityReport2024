@@ -1773,7 +1773,7 @@ The Florida Department of Transportation, law enforcement, emergency personnel, 
 -   Emergency response personnel to respond and treat injured persons.
 -   Specialized response teams must remove hazardous materials before the road can be opened to traffic.
 -   The local coroner must investigate the scene if a fatality occurs. The time to open the road to traffic is typically one hour when a fatality occurs.
--   The Florida Department of Transportation and law enforcement agencies work to open the road to traffic and restore the traffic operations as soon
+-   The Florida Department of Transportation and law enforcement agencies work to open the road to traffic and restore the traffic operations as soon as possible. 
 
 The goals is to maintain or reduce the time to open roads to normal traffic following an event.
 
@@ -1889,9 +1889,9 @@ hchart(df_events, "pie", hcaes(x = Event, y = Total)) %>%
 
 ## Transit Accessibility
 
-Access to transit is a significant need in underserved communities and a focus for the transit agencies within the region. On a regional basis the availability of populations to transit is low. However, in the urban core of Jacksonville nearly 89% of the populations is within 1/4 mile of a transit stop.
+Access to transit is a significant need in underserved communities and a focus for the transit agencies within the region. On a regional basis the availability of populations to transit is low. However, in the urban core of Jacksonville nearly 89% of the populations is within 1/4 mile of a transit stop. The target is to provide transit access within 1/4 mile of a bus stop to 95% of the population. 
 
-The target is to provide transit access within 1/4 mile of a bus stop to 95% of the population.
+Park-n-Ride lots are served by local bus routes and Express bus service to Downtown. There is continual service from most lots. Park-N-Ride lots are designed to enhance travel time, encourage connections to other modes of transportation, and minimize boarding and waiting times.
 
 Source: [JTA Park n' Ride Locations](https://www.jtafla.com/ride-jta/how-to-ride/park-n-ride/){target="_blank"}
 
@@ -2152,25 +2152,25 @@ geojson_data <- st_read("~/GitHub/AnnualMobilityReport2024/data/nftpo_trails.geo
   st_transform(crs = 4326)
 
 # Create a custom color generating function
-custom_palette <- c("#FF33A1", "#2ea338")
+custom_palette <- c("forestgreen", "blue","orange")
 
 # Continuous palette
-pal <- colorFactor(palette = custom_palette, domain = geojson_data$Scale)
+pal <- colorFactor(palette = custom_palette, domain = geojson_data$Status)
 
 # Create hover-over labels 
-labs <- paste0("<b>Trail Name: </b>", geojson_data$Name, "<br><b>County: </b>", geojson_data$County, "<br><b>Scale: </b>", geojson_data$Scale)
+labs <- paste0("<b>Trail Name: </b>", geojson_data$Name, "<br><b>County: </b>", geojson_data$County, "<br><b>Status: </b>", geojson_data$Status)
 
 # Create the Leaflet map
 leaflet() %>%
   addTiles() %>%  # Add default OpenStreetMap map tiles
   addProviderTiles(providers$CartoDB.Positron) %>%
   setView(lng = -81.655651, lat = 30.232184, zoom = 9)%>%
-  addPolylines(data = geojson_data, color = ~pal(Scale), popup = ~paste(labs), opacity = 1.0, label = ~lapply(labs, htmltools::HTML))%>%
+  addPolylines(data = geojson_data, color = ~pal(Status), popup = ~paste(labs), opacity = 1.0, label = ~lapply(labs, htmltools::HTML))%>%
   addLegend("topright", 
-            colors = pal(unique(geojson_data$Scale)), 
-            labels = unique(geojson_data$Scale),
+            colors = pal(unique(geojson_data$Status)), 
+            labels = unique(geojson_data$Status),
             opacity = 1.0,
-            title = "Scale") %>% 
+            title = "Status") %>% 
   addEasyButton(
     easyButton(
       icon = 'fa-map-marker',
@@ -2179,6 +2179,7 @@ leaflet() %>%
     )
   )
 ```
+
 
 ## Pedestrian Connectivity
 
