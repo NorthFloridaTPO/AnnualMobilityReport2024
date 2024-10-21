@@ -965,8 +965,55 @@ hchart(df_vmt, "column", hcaes(x = Year, y = TotalNHSVMT, group = County)) %>%
 ```
 :::
 
-## Transit Ridership
+## Person Miles Traveled
 
+Person-miles traveled takes total vehicle-miles traveled and multiplies it by persons per vehicle. The FDOT sourcebook was used to obtain the following 2022 data shown below. According to the data, 52.9 million person-miles traveled was estimated for 2022 on all SHS facilities. 
+
+```{r}
+# Define your custom colors
+custom_colors <- c("#A7E6FF","#3ABEF9","#3572EF","#050C9C")
+
+df_pmt <- read.csv("~/GitHub/AnnualMobilityReport2024/data/pmt.csv")
+
+# Create a Highchart object with data labels and stack totals
+hchart(df_pmt, "column", hcaes(x = Year, y = SHS, group = Facility_Type)) %>%
+  hc_colors(custom_colors) %>%
+  hc_plotOptions(column = list(
+    stacking = "normal",
+    dataLabels = list(
+      enabled = TRUE,
+      formatter = JS("function() {
+  return Highcharts.numberFormat(this.y / 1e6, 1) + 'M';}")
+    )
+  )) %>%
+  hc_yAxis(
+    stackLabels = list(
+      enabled = TRUE, # Enable stack totals
+      #style = list(fontWeight = 'bold', color = 'gray',
+      formatter = JS(paste0("function() {
+      return Highcharts.numberFormat(this.total / 1e6, 1) + 'M';
+    }"))
+    ),
+    title = list(text = "Person Miles Traveled"),
+    min = 0
+  ) %>%
+  hc_title(text = "State Highway System Person Miles Traveled by Facility Type and Year") %>%
+  hc_subtitle(text = 'Source: <a href="https://fdotsourcebook.com/performance-measures/auto/person-miles-traveled#" target="_blank"><b>FDOT Sourcebook Person Miles Traveled</b></a>') %>%
+  hc_xAxis(title = list(text = "Year")) %>%
+  hc_tooltip(shared = TRUE, pointFormat = "<span style='color:{series.color}'>{series.name}</span>: <b>{point.y}</b><br/>") %>%
+  hc_legend(enabled = TRUE) %>%
+  hc_add_theme(hc_theme_smpl()) %>%
+  hc_chart(events = list(load = JS("function() { this.xAxis[0].setExtremes(); }"))) %>%
+  hc_exporting(enabled = TRUE)  # Enable the exporting button
+```
+
+## Truck Miles Traveled 
+Truck-miles traveled looks at the total miles traveled by combination trucks within a region. The FDOT Source Book was used to determine the total truck miles traveled in the North Florida TPO region. The total SHS truck miles traveled in 2022 was 1.4 million miles and the total NHS truck miles traveled in 2022 was 1.3 million miles.
+
+## Vehicle Occupancy
+Estimates of the average number of occupants in a vehicle is referred to as the Vehicle Occupancy Factors (VOF). This measure can be calculated using person-miles traveled divided by vehicle-miles traveled. For 2022 data, the vehicle occupancy was calculated as 1.64. Crash data taken for the Crash Analysis Reporting System (CAR) is also used in estimating the average vehicle occupancy rate. A technical report titled Vehicle Occupancy Factor and Transit Occupancy Factor Calculation was also completed by the FDOT forecasting and trends office in 2022 (<a href="https://www.fdot.gov/docs/default-source/planning/fto/mobility/vor-rpt.pdf">Vehicle Occupancy Factor and Transit Occupancy Factor Calculation</a>).  
+
+## Transit Ridership
 Transit ridership has declined in the wake of the COVID-19 pandemic. The JTA keeps track of these metrics and levels continue to remain stagnant over the past few years. Services that are included within JTA’s scope consist of the St. Johns River Ferry, ReadiRide (on-call transportation service), Clay Flex, St. Johns Express, Clay Express, and Nassau Express. The 2022 ridership data related to these services are shown in table below. On-time performance was only tracked for the St. Johns River Ferry during 2022 and this came in at 98%.
 
 ```{r}
@@ -1417,9 +1464,11 @@ leaflet() %>%
 
 ### TTR Segment Table
 
-The travel time reliability data in this table stems from historic data from vehicle probes, permanent and temporary count sites, HERE travel time data and FDOT’s roadway characteristics inventory. The top corridors within the region were analyzed which include I-10, I-95, I-295, SR-10, SR-13, SR-21, SR-200, US-1, US-17, and US-90.
+The data for travel time reliability was collected through the FDOT Source Book. The inputs included in this stem from historic data from vehicle probes, permanent and temporary count sites, HERE travel time data and FDOT’s roadway characteristics inventory. The most congested corridors within the region were analyzed which include I-10, I-95, I-295, SR-10, SR-13, SR-21, SR-200, US-1, US-17, and US-90. 
 
-The 2022 LOTTR data is reported for the months of October, November and December, and takes the maximum value calculated throughout the period. The 2019 – 2021 LOTTR data was taken from the TPOs 2023 Annual Mobility Report.
+The 2022 LOTTR data is reported for the months of October, November and December, and takes the maximum value calculated throughout the period. 
+
+More detailed analysis of the travel time reliability was performed on the most congested corridors within the region. This index is the ratio of the 80th-percentile travel time and the median travel time. For a 10-minute trip with a level of travel time reliability of 2.5 you have an 80% chance of arriving within 25-minutes. The larger the level of travel time reliability the more variable the travel times are along each corridor. The table below summarizes the 2022 LOTTR values of 1.6 or greater for the region and the corresponding critical segment. These values are taken for the PM peak period.
 
 ```{r}
 table_options <- function() {
@@ -1438,7 +1487,7 @@ table_options <- function() {
     )
   )
 }
-df_lottr <- read.csv("~/GitHub/AnnualMobilityReport2024/data/LOTTR.csv", check.names=FALSE, row.names=1) 
+df_lottr <- read.csv("~/GitHub/AnnualMobilityReport2024/data/LOTTR_updated_2022.csv", check.names=FALSE, row.names=1) 
 datatable(df_lottr,caption = htmltools::tags$caption(
             style = 'caption-side: top; text-align: left;',
             htmltools::HTML('Source: <a href="https://fdotsourcebook.com" target="_blank"><b>FDOT Sourcebook</b></a>')),options = c(table_options(), list(pageLength = 11)))
@@ -1510,7 +1559,7 @@ table_options <- function() {
     searching = TRUE,
     scroller = TRUE,
     lengthChange = TRUE,
-    paginate=TRUE,
+    paginate=FALSE,
     initComplete = JS(
       "function(settings, json) {",
       "$(this.api().table().header()).css({'background-color': '#517fb9', 'color': '#fff'});",
@@ -1521,9 +1570,57 @@ table_options <- function() {
 df_tttr <- read.csv("~/GitHub/AnnualMobilityReport2024/data/TTTR.csv", check.names=FALSE, row.names=1) 
 datatable(df_tttr,caption = htmltools::tags$caption(
             style = 'caption-side: top; text-align: left;',
-            htmltools::HTML('Source: <a href="https://npmrds.ritis.org/analytics/" target="_blank"><b>NPMRDS RITIS Data</b></a>')),options = c(table_options(), list(pageLength = 7)))
+            htmltools::HTML('Source: <a href="https://npmrds.ritis.org/analytics/" target="_blank"><b>NPMRDS RITIS Data</b></a>')),options = c(table_options(), list(pageLength = 14)))
 ```
 :::
+
+## Percent of System Heavily Congested
+Based on the FDOT Source Book, the peak hour for the North Florida TPO region experiences heavy congestion on 4.2 percent of the roadway system in 2022. Over the past five years of data (2018 – 2022), numbers have been down from 2018 and 2019 levels. However, they have been continuing to climb since 2020. The last five years of data (from 2018 – 2022) are 4.7 percent, 4.7 percent, 1.8 percent, 2.9 percent, and 4.2 percent.
+
+```{r}
+table_options <- function() {
+  list(
+    deferRender = TRUE,
+    searching = TRUE,
+    scroller = TRUE,
+    lengthChange = TRUE,
+    paginate=FALSE,
+    initComplete = JS(
+      "function(settings, json) {",
+      "$(this.api().table().header()).css({'background-color': '#517fb9', 'color': '#fff'});",
+      "}"
+    )
+      )
+}
+df_percentage_heavy_congested <- read.csv("~/GitHub/AnnualMobilityReport2024/data/percent_heavily_congested.csv", check.names=FALSE, row.names=1) 
+datatable(df_percentage_heavy_congested,caption = htmltools::tags$caption(
+            style = 'caption-side: top; text-align: left;',
+            htmltools::HTML('Source: <a href="https://fdotsourcebook.com/performance-measures/auto/miles-by-congestion-type#" target="_blank"><b>FDOT Sourcebook</b></a>')),options = c(table_options(), list(pageLength = 1)))
+```
+
+## Duration of Congestion
+The daily duration of congestion for the North Florida TPO region is 16.4 minutes in 2022. This number has also been climbing since 2020. 
+
+```{r}
+table_options <- function() {
+  list(
+    deferRender = TRUE,
+    searching = TRUE,
+    scroller = TRUE,
+    lengthChange = TRUE,
+    paginate=FALSE,
+    initComplete = JS(
+      "function(settings, json) {",
+      "$(this.api().table().header()).css({'background-color': '#517fb9', 'color': '#fff'});",
+      "}"
+    )
+      )
+}
+df_duration_heavy_congested <- read.csv("~/GitHub/AnnualMobilityReport2024/data/duration_heavily_congested.csv", check.names=FALSE, row.names=1) 
+datatable(df_duration_heavy_congested,caption = htmltools::tags$caption(
+            style = 'caption-side: top; text-align: left;',
+            htmltools::HTML('Source: <a href="https://fdotsourcebook.com/performance-measures/auto/duration-of-congestion#"><b>FDOT Sourcebook</b></a>')),options = c(table_options(), list(pageLength = 1)))
+```
 
 ## Level of Service
 
@@ -1576,6 +1673,14 @@ leaflet() %>%
 ## Average Vehicle Delay
 
 Vehicle delay is typically reported annually in vehicle-hours per day and is calculated by the sum of the daily delay. The FDOT sourcebook shows data provided from HERE technologies and can be summarized for the region, by county, and by functional classification of the roadway. For all highway systems in the North Florida TPO region, the daily vehicle hours of delay increased from 2020 to 2022, but is still below pre-pandemic levels.
+
+## Average Commute Time 
+The average commute time data was taken from the U.S. Census Bureau through the American Community Survey. The average commute time for each county is shown below (<a href="https://www.census.gov/">U.S. Census Bureau</a>):
+
+1.	Clay: 32.4 minutes
+2.	Duval: 24.4 minutes
+3.	Nassau: 30.4 minutes
+4.	St. Johns: 27.1 minutes
 
 ::: {layout="[ [1,1] ]"}
 ```{r}
@@ -2917,5 +3022,97 @@ datatable(df_sysperf,
             style = 'caption-side: top; text-align: left;',
             htmltools::HTML('Source: <a href="https://performance-data-integration-space-fdot.hub.arcgis.com/pages/mpo-performance-resources" target="_blank"><b>Florida Department of Transportation Forecasting and Trends Office</b></a>')),
           options = c(table_options(), list(pageLength = 8)))
+
+```
+
+## PM4 Transit
+
+### Transit Asset Management
+This objective is vital to maintain the transit systems efficiency and provide effective operations. The performance measures list in the tables below are based on the Transit Economic Requirements Model.
+
+::: {.panel-tabset .nav-pills}
+### JTA Transit Asset Management 
+
+
+```{r}
+table_options <- function() {
+  list(
+    deferRender = TRUE,
+    searching = FALSE,
+    scroller = TRUE,
+    lengthChange = FALSE,
+    paginate=FALSE,
+    initComplete = JS(
+      "function(settings, json) {",
+      "$(this.api().table().header()).css({'background-color': '#517fb9', 'color': '#fff'});",
+      "}"
+    )
+  )
+}
+
+df_tam <- read.csv("~/GitHub/AnnualMobilityReport2024/data/pm4_tam_updated.csv", check.names=FALSE, header=TRUE) 
+
+datatable(df_tam,
+          caption = htmltools::tags$caption(
+            style = 'caption-side: top; text-align: left;',
+            htmltools::HTML('Source: <a href="https://www.fdot.gov/" target="_blank"><b>Florida Department of Transportation</b></a>')),
+          options = c(table_options(), list(pageLength = 14)))
+
+```
+
+### The Sunshine Bus Transit Asset Management
+```{r}
+table_options <- function() {
+  list(
+    deferRender = TRUE,
+    searching = FALSE,
+    scroller = TRUE,
+    lengthChange = FALSE,
+    paginate=FALSE,
+    initComplete = JS(
+      "function(settings, json) {",
+      "$(this.api().table().header()).css({'background-color': '#517fb9', 'color': '#fff'});",
+      "}"
+    )
+  )
+}
+
+df_tam_sunshine <- read.csv("~/GitHub/AnnualMobilityReport2024/data/pm4_tam_sunshine.csv", check.names=FALSE, header=TRUE) 
+
+datatable(df_tam_sunshine,
+          caption = htmltools::tags$caption(
+            style = 'caption-side: top; text-align: left;',
+            htmltools::HTML('Source: <a href="https://www.fdot.gov/" target="_blank"><b>Florida Department of Transportation</b></a>')),
+          options = c(table_options(), list(pageLength = 4)))
+
+```
+:::
+
+### Transit Safety
+The transit safety performance measure is used to ensure that the local transit agencies operate in a safe manner to meet the demands of the public. The reportable fatalities and injuries are compared to the total vehicle revenue miles. The transit revenue miles between failures measure is used to determine the average frequency of delays caused by a problem with the equipment. The FDOT sourcebook provides this data for JTA the Jacksonville Transportation Authority (JTA). 
+
+```{r}
+table_options <- function() {
+  list(
+    deferRender = TRUE,
+    searching = FALSE,
+    scroller = TRUE,
+    lengthChange = FALSE,
+    paginate=FALSE,
+    initComplete = JS(
+      "function(settings, json) {",
+      "$(this.api().table().header()).css({'background-color': '#517fb9', 'color': '#fff'});",
+      "}"
+    )
+  )
+}
+
+df_transit_safety <- read.csv("~/GitHub/AnnualMobilityReport2024/data/pm4_transit_safety.csv", check.names=FALSE, header=TRUE) 
+
+datatable(df_transit_safety,
+          caption = htmltools::tags$caption(
+            style = 'caption-side: top; text-align: left;',
+            htmltools::HTML('Source: <a href="https://www.transit.dot.gov/ntd/data-product/safety-security-major-only-time-series-data" target="_blank"><b>Federal  Transit Administration</b></a>')),
+          options = c(table_options(), list(pageLength = 6)))
 
 ```
