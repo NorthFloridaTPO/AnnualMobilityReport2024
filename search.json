@@ -105,32 +105,53 @@
     "text": "4.1 Vehicle Miles Traveled\nVehicle-miles traveled considers the Annual Average Daily Traffic (AADT) and the roadway segment length. There is not a set benchmark or goal for vehicle miles traveled. Reducing this number can help with congestion issues along the roadway network. 32.2 million vehicle miles traveled was estimated for 2022."
   },
   {
+    "objectID": "amr2024.html#person-miles-traveled",
+    "href": "amr2024.html#person-miles-traveled",
+    "title": "Annual Mobility Report 2024",
+    "section": "4.2 Person Miles Traveled",
+    "text": "4.2 Person Miles Traveled\nPerson-miles traveled takes total vehicle-miles traveled and multiplies it by persons per vehicle. The FDOT sourcebook was used to obtain the following 2022 data shown below. According to the data, 52.9 million person-miles traveled was estimated for 2022 on all SHS facilities.\n::: {layout=“[ [1,1] ]”}"
+  },
+  {
+    "objectID": "amr2024.html#truck-miles-traveled",
+    "href": "amr2024.html#truck-miles-traveled",
+    "title": "Annual Mobility Report 2024",
+    "section": "4.3 Truck Miles Traveled",
+    "text": "4.3 Truck Miles Traveled\nTruck-miles traveled looks at the total miles traveled by combination trucks within a region. The FDOT Source Book was used to determine the total truck miles traveled in the North Florida TPO region. The total SHS truck miles traveled in 2022 was 1.4 million miles and the total NHS truck miles traveled in 2022 was 1.3 million miles."
+  },
+  {
+    "objectID": "amr2024.html#vehicle-occupancy",
+    "href": "amr2024.html#vehicle-occupancy",
+    "title": "Annual Mobility Report 2024",
+    "section": "4.4 Vehicle Occupancy",
+    "text": "4.4 Vehicle Occupancy\nEstimates of the average number of occupants in a vehicle is referred to as the Vehicle Occupancy Factors (VOF). This measure can be calculated using person-miles traveled divided by vehicle-miles traveled. For 2022 data, the vehicle occupancy was calculated as 1.64. Crash data taken for the Crash Analysis Reporting System (CAR) is also used in estimating the average vehicle occupancy rate. A technical report titled Vehicle Occupancy Factor and Transit Occupancy Factor Calculation was also completed by the FDOT forecasting and trends office in 2022 (Vehicle Occupancy Factor and Transit Occupancy Factor Calculation)."
+  },
+  {
     "objectID": "amr2024.html#transit-ridership",
     "href": "amr2024.html#transit-ridership",
     "title": "Annual Mobility Report 2024",
-    "section": "4.2 Transit Ridership",
-    "text": "4.2 Transit Ridership\nTransit ridership has declined in the wake of the COVID-19 pandemic. The JTA keeps track of these metrics and levels continue to remain stagnant over the past few years. Services that are included within JTA’s scope consist of the St. Johns River Ferry, ReadiRide (on-call transportation service), Clay Flex, St. Johns Express, Clay Express, and Nassau Express. The 2022 ridership data related to these services are shown in table below. On-time performance was only tracked for the St. Johns River Ferry during 2022 and this came in at 98%."
+    "section": "4.5 Transit Ridership",
+    "text": "4.5 Transit Ridership\nTransit ridership has declined in the wake of the COVID-19 pandemic. The JTA keeps track of these metrics and levels continue to remain stagnant over the past few years. Services that are included within JTA’s scope consist of the St. Johns River Ferry, ReadiRide (on-call transportation service), Clay Flex, St. Johns Express, Clay Express, and Nassau Express. The 2022 ridership data related to these services are shown in table below. On-time performance was only tracked for the St. Johns River Ferry during 2022 and this came in at 98%."
   },
   {
     "objectID": "amr2024.html#sea-travel-and-freight",
     "href": "amr2024.html#sea-travel-and-freight",
     "title": "Annual Mobility Report 2024",
-    "section": "4.3 Sea Travel and Freight",
-    "text": "4.3 Sea Travel and Freight\nNo cruise ships called on JAXPORT in 2021 due to the COVID-19 pandemic. Carnival Cruise Lines returned to service and made its first vessel call in March 2022. The services peaked in 2016 at 390 thousand passengers. In 2023, cruise passenger levels seems to have returned to pre-pandemic levels.\nThere is no defined benchmark for this measure. Increases are preferred and annual monitoring is conducted.\nJAXPORT’s terminals shipped more tons of cargo in fiscal year 2023 than 2022. The Port of Fernandina shipping is slightly less in 2023. Overall shipping tonnage has remained steady over the last 3 years.\nThere is no defined benchmark for this measure. Increases are preferred and annual monitoring is conducted.\n\n\n\n\n\n\n4.3.1 Cruise Passengers\n\n\n\n\n\n\n4.3.2 Tons Shipped\n\n\n\n\n\n\n\n\n4.3.3 Automobiles and Containers Shipped\nJAXPORT is maintaining its position as the container port in Florida and one of the top 10 in the nation. JAXPORT is working to provide an alternative to other constrained ports for container shipments and expand its market share in breakbulk cargo through harbor deepening, berth enhancements and new handling equipment investments.\nContainer shipments at the Port of Fernandina peaked in 2021 but have risen slightly in 2023 compared to 2022. Automobile shipments in 2023 were at their lowest in the last 5 year period.\nThere is no defined benchmark for this measure. Increases are preferred and annual monitoring is conducted."
+    "section": "4.6 Sea Travel and Freight",
+    "text": "4.6 Sea Travel and Freight\nNo cruise ships called on JAXPORT in 2021 due to the COVID-19 pandemic. Carnival Cruise Lines returned to service and made its first vessel call in March 2022. The services peaked in 2016 at 390 thousand passengers. In 2023, cruise passenger levels seems to have returned to pre-pandemic levels.\nThere is no defined benchmark for this measure. Increases are preferred and annual monitoring is conducted.\nJAXPORT’s terminals shipped more tons of cargo in fiscal year 2023 than 2022. The Port of Fernandina shipping is slightly less in 2023. Overall shipping tonnage has remained steady over the last 3 years.\nThere is no defined benchmark for this measure. Increases are preferred and annual monitoring is conducted.\n\n\n\n\n\n\n4.6.1 Cruise Passengers\n\n\n\n\n\n\n4.6.2 Tons Shipped\n\n\n\n\n\n\n\n\n4.6.3 Automobiles and Containers Shipped\nJAXPORT is maintaining its position as the container port in Florida and one of the top 10 in the nation. JAXPORT is working to provide an alternative to other constrained ports for container shipments and expand its market share in breakbulk cargo through harbor deepening, berth enhancements and new handling equipment investments.\nContainer shipments at the Port of Fernandina peaked in 2021 but have risen slightly in 2023 compared to 2022. Automobile shipments in 2023 were at their lowest in the last 5 year period.\nThere is no defined benchmark for this measure. Increases are preferred and annual monitoring is conducted."
   },
   {
     "objectID": "amr2024.html#air-travel-and-freight",
     "href": "amr2024.html#air-travel-and-freight",
     "title": "Annual Mobility Report 2024",
-    "section": "4.4 Air Travel and Freight",
-    "text": "4.4 Air Travel and Freight\n\n4.4.1 Air Passengers\nIn 2021 passengers traveling at Jacksonville International Airport increase by 27% when compared to 2020 as the recovery from the COVID-19 pandemic began. Monthly passengers have returned to pre-pandemic levels.\nThere is no defined benchmark for aviation passengers served. Increases are preferred and annual monitoring is conducted.\nFiscal years begin October 1 and end September 30 of each year.\n\n\n\n\n\n\n\n\n4.4.2 Air Cargo\nAir cargo shipments grew about 7% in 2021 compared to 2020 but fell about 3% in 2022 compared to 2021.\nThere is no defined benchmark for this measure. Increases are preferred and annual monitoring is conducted."
+    "section": "4.7 Air Travel and Freight",
+    "text": "4.7 Air Travel and Freight\n\n4.7.1 Air Passengers\nIn 2021 passengers traveling at Jacksonville International Airport increase by 27% when compared to 2020 as the recovery from the COVID-19 pandemic began. Monthly passengers have returned to pre-pandemic levels.\nThere is no defined benchmark for aviation passengers served. Increases are preferred and annual monitoring is conducted.\nFiscal years begin October 1 and end September 30 of each year.\n\n\n\n\n\n\n\n\n4.7.2 Air Cargo\nAir cargo shipments grew about 7% in 2021 compared to 2020 but fell about 3% in 2022 compared to 2021.\nThere is no defined benchmark for this measure. Increases are preferred and annual monitoring is conducted."
   },
   {
     "objectID": "amr2024.html#travel-time-reliability",
     "href": "amr2024.html#travel-time-reliability",
     "title": "Annual Mobility Report 2024",
     "section": "5.1 Travel Time Reliability",
-    "text": "5.1 Travel Time Reliability\nLevel of Travel Time Reliability (LOTTR) is defined as the ratio of the longer travel times (80th percentile) to a “normal” travel time (50th percentile). LOTTR assesses the consistency, or dependability, of travel times from day to day or across different times of the day. For a 10-minute trip with a level of travel time reliability of 2.5 you have an 80% chance of arriving within 25-minutes. The larger the level of travel time reliability the more variable the travel times are along each corridor.\nThe goal is for 95% of the vehicle-miles traveled within a corridor or system be reliable (level of travel time reliability of 1.50 or less) along a corridor of on Strategic Intermodal System facilities in North Florida.\nThe map shows the critical Level of Travel Time Reliability of the four time periods (AM Peak, Mid Day, PM Peak, and Weekends) in 2023.\nSource: Level of Travel Time Reliability (LOTTR)\n\nLOTTR MapTTR Segment Table\n\n\n\n\n\n\n\n\n\n\nThe travel time reliability data in this table stems from historic data from vehicle probes, permanent and temporary count sites, HERE travel time data and FDOT’s roadway characteristics inventory. The top corridors within the region were analyzed which include I-10, I-95, I-295, SR-10, SR-13, SR-21, SR-200, US-1, US-17, and US-90.\nThe 2022 LOTTR data is reported for the months of October, November and December, and takes the maximum value calculated throughout the period. The 2019 – 2021 LOTTR data was taken from the TPOs 2023 Annual Mobility Report."
+    "text": "5.1 Travel Time Reliability\nLevel of Travel Time Reliability (LOTTR) is defined as the ratio of the longer travel times (80th percentile) to a “normal” travel time (50th percentile). LOTTR assesses the consistency, or dependability, of travel times from day to day or across different times of the day. For a 10-minute trip with a level of travel time reliability of 2.5 you have an 80% chance of arriving within 25-minutes. The larger the level of travel time reliability the more variable the travel times are along each corridor.\nThe goal is for 95% of the vehicle-miles traveled within a corridor or system be reliable (level of travel time reliability of 1.50 or less) along a corridor of on Strategic Intermodal System facilities in North Florida.\nThe map shows the critical Level of Travel Time Reliability of the four time periods (AM Peak, Mid Day, PM Peak, and Weekends) in 2023.\nSource: Level of Travel Time Reliability (LOTTR)\n\nLOTTR MapTTR Segment Table\n\n\n\n\n\n\n\n\n\n\nThe data for travel time reliability was collected through the FDOT Source Book. The inputs included in this stem from historic data from vehicle probes, permanent and temporary count sites, HERE travel time data and FDOT’s roadway characteristics inventory. The most congested corridors within the region were analyzed which include I-10, I-95, I-295, SR-10, SR-13, SR-21, SR-200, US-1, US-17, and US-90.\nThe 2022 LOTTR data is reported for the months of October, November and December, and takes the maximum value calculated throughout the period.\nMore detailed analysis of the travel time reliability was performed on the most congested corridors within the region. This index is the ratio of the 80th-percentile travel time and the median travel time. For a 10-minute trip with a level of travel time reliability of 2.5 you have an 80% chance of arriving within 25-minutes. The larger the level of travel time reliability the more variable the travel times are along each corridor. Table 10 summarizes the 2022 LOTTR values of 1.6 or greater for the region and the corresponding critical segment. These values are taken for the PM peak period."
   },
   {
     "objectID": "amr2024.html#truck-travel-time-reliability",
@@ -140,39 +161,60 @@
     "text": "5.2 Truck Travel Time Reliability\nThis index is the ratio of the 95th-percentile travel time and the median travel time. The larger the Truck Travel Time Reliability index, the more variable the travel times are along each corridor. For a trip lasting 10 minutes with a truck travel time reliability of 1.2 you have a 95% chance of arriving within 12 minutes.\nThe truck travel time reliability index should maintain or decline each year.\nSource: Truck Travel Time Reliability (TTTR)\n\nTruck TTR MapTruck TTR Segment Table\n\n\n\n\n\n\n\n\n\n\nTravel time reliability was obtained from the NPMRDS, AADT from Highway Performance Monitoring System (HPMS), and occupancy factors provided by the FHWA. The goal is to maintain a TTTR ratio of under 2.0. For the North Florida TPO, the observed TTTR was 1.49 in 2022. This table shows the TTTR on major freight corridors within the TPO boundary."
   },
   {
+    "objectID": "amr2024.html#percent-of-system-heavily-congested",
+    "href": "amr2024.html#percent-of-system-heavily-congested",
+    "title": "Annual Mobility Report 2024",
+    "section": "5.3 Percent of System Heavily Congested",
+    "text": "5.3 Percent of System Heavily Congested\nBased on the FDOT Source Book, the peak hour for the North Florida TPO region experiences heavy congestion on 4.2 percent of the roadway system in 2022. Over the past five years of data (2018 – 2022), numbers have been down from 2018 and 2019 levels. However, they have been continuing to climb since 2020. The last five years of data (from 2018 – 2022) are 4.7 percent, 4.7 percent, 1.8 percent, 2.9 percent, and 4.2 percent."
+  },
+  {
+    "objectID": "amr2024.html#duration-of-congestion",
+    "href": "amr2024.html#duration-of-congestion",
+    "title": "Annual Mobility Report 2024",
+    "section": "5.4 Duration of Congestion",
+    "text": "5.4 Duration of Congestion\nThe daily duration of congestion for the North Florida TPO region is 16.4 minutes in 2022. This number has also been climbing since 2020."
+  },
+  {
     "objectID": "amr2024.html#level-of-service",
     "href": "amr2024.html#level-of-service",
     "title": "Annual Mobility Report 2024",
-    "section": "5.3 Level of Service",
-    "text": "5.3 Level of Service\nLevel of Service (LOS) is a rating system of A to F with A being the best – low volume of free-flowing traffic with no delays – and F being the worst – low speeds, volume exceeds capacity with stop-and-go traffic. The FDOT District 2 Level of Service Report was reviewed. The LOS can be evaluated for daily, peak hour or peak period. The number of rural miles meeting generally acceptable operating conditions over the total number of rural road miles can be used to calculate the percent of miles meeting LOS criteria. Standards for LOS on state highways are in the FDOT Multimodal Quality/Level of Service Handbook published in 2023. The service volumes are split up into roadway classification and give specific input for rural areas.\nSource: FDOT District Two, Jacksonville Urban Office"
+    "section": "5.5 Level of Service",
+    "text": "5.5 Level of Service\nLevel of Service (LOS) is a rating system of A to F with A being the best – low volume of free-flowing traffic with no delays – and F being the worst – low speeds, volume exceeds capacity with stop-and-go traffic. The FDOT District 2 Level of Service Report was reviewed. The LOS can be evaluated for daily, peak hour or peak period. The number of rural miles meeting generally acceptable operating conditions over the total number of rural road miles can be used to calculate the percent of miles meeting LOS criteria. Standards for LOS on state highways are in the FDOT Multimodal Quality/Level of Service Handbook published in 2023. The service volumes are split up into roadway classification and give specific input for rural areas.\nSource: FDOT District Two, Jacksonville Urban Office"
   },
   {
     "objectID": "amr2024.html#average-vehicle-delay",
     "href": "amr2024.html#average-vehicle-delay",
     "title": "Annual Mobility Report 2024",
-    "section": "5.4 Average Vehicle Delay",
-    "text": "5.4 Average Vehicle Delay\nVehicle delay is typically reported annually in vehicle-hours per day and is calculated by the sum of the daily delay. The FDOT sourcebook shows data provided from HERE technologies and can be summarized for the region, by county, and by functional classification of the roadway. For all highway systems in the North Florida TPO region, the daily vehicle hours of delay increased from 2020 to 2022, but is still below pre-pandemic levels."
+    "section": "5.6 Average Vehicle Delay",
+    "text": "5.6 Average Vehicle Delay\nVehicle delay is typically reported annually in vehicle-hours per day and is calculated by the sum of the daily delay. The FDOT sourcebook shows data provided from HERE technologies and can be summarized for the region, by county, and by functional classification of the roadway. For all highway systems in the North Florida TPO region, the daily vehicle hours of delay increased from 2020 to 2022, but is still below pre-pandemic levels."
+  },
+  {
+    "objectID": "amr2024.html#average-commute-time",
+    "href": "amr2024.html#average-commute-time",
+    "title": "Annual Mobility Report 2024",
+    "section": "5.7 Average Commute Time",
+    "text": "5.7 Average Commute Time\nThe average commute time data was taken from the U.S. Census Bureau through the American Community Survey. The average commute time for each county is shown below (U.S. Census Bureau):\n\nClay: 32.4 minutes\nDuval: 24.4 minutes\nNassau: 30.4 minutes\nSt. Johns: 27.1 minutes"
   },
   {
     "objectID": "amr2024.html#travel-speeds",
     "href": "amr2024.html#travel-speeds",
     "title": "Annual Mobility Report 2024",
-    "section": "5.5 Travel Speeds",
-    "text": "5.5 Travel Speeds\nThe FDOT provides average peak hour travel speed by roadway segment for the state highway system. This data can be summarized for the region, by county, and by roadway functional classification. The average speed is reported annually in miles per hour and is calculated by averaging the average peak hour travel speed. Average speeds increased from 2020 to 2021 as a result of lower demand (vehicle miles traveled).\nThe average travel speed should maintain or increase from year to year. The following table shows the trends for each county. The year and speed value is shown on hover."
+    "section": "5.8 Travel Speeds",
+    "text": "5.8 Travel Speeds\nThe FDOT provides average peak hour travel speed by roadway segment for the state highway system. This data can be summarized for the region, by county, and by roadway functional classification. The average speed is reported annually in miles per hour and is calculated by averaging the average peak hour travel speed. Average speeds increased from 2020 to 2021 as a result of lower demand (vehicle miles traveled).\nThe average travel speed should maintain or increase from year to year. The following table shows the trends for each county. The year and speed value is shown on hover."
   },
   {
     "objectID": "amr2024.html#incident-clearance-times",
     "href": "amr2024.html#incident-clearance-times",
     "title": "Annual Mobility Report 2024",
-    "section": "5.6 Incident Clearance Times",
-    "text": "5.6 Incident Clearance Times\nThe Florida Department of Transportation, law enforcement, emergency personnel, and the local coroner’s office can be engaged in incidents. During some incidents, the time to open the road to traffic and restore or clear the road to normal traffic conditions can be impacted by the conditions of the crash that are beyond FDOT’s or law enforcement’s control. For example:\n\nEmergency response personnel to respond and treat injured persons.\nSpecialized response teams must remove hazardous materials before the road can be opened to traffic.\nThe local coroner must investigate the scene if a fatality occurs. The time to open the road to traffic is typically one hour when a fatality occurs.\nThe Florida Department of Transportation and law enforcement agencies work to open the road to traffic and restore the traffic operations as soon as possible.\n\nThe goals is to maintain or reduce the time to open roads to normal traffic following an event."
+    "section": "5.9 Incident Clearance Times",
+    "text": "5.9 Incident Clearance Times\nThe Florida Department of Transportation, law enforcement, emergency personnel, and the local coroner’s office can be engaged in incidents. During some incidents, the time to open the road to traffic and restore or clear the road to normal traffic conditions can be impacted by the conditions of the crash that are beyond FDOT’s or law enforcement’s control. For example:\n\nEmergency response personnel to respond and treat injured persons.\nSpecialized response teams must remove hazardous materials before the road can be opened to traffic.\nThe local coroner must investigate the scene if a fatality occurs. The time to open the road to traffic is typically one hour when a fatality occurs.\nThe Florida Department of Transportation and law enforcement agencies work to open the road to traffic and restore the traffic operations as soon as possible.\n\nThe goals is to maintain or reduce the time to open roads to normal traffic following an event."
   },
   {
     "objectID": "amr2024.html#incident-event-types",
     "href": "amr2024.html#incident-event-types",
     "title": "Annual Mobility Report 2024",
-    "section": "5.7 Incident Event Types",
-    "text": "5.7 Incident Event Types\nOnly 30% of the congestion in our region is caused by recurring delays. Other sources of delays include holiday peaks, incidents, weather, excess delay at signals, weather, and work zones. Transportation Systems Management and Operations (TSM&O) strategies are need to reduce delays caused by non-recurrent factors.\nThe number of lane closures or other events, such as abandoned vehicles, debris in the roadway, road work, or crashes, increased in 2022.\nThere is no target for the number of events that occur."
+    "section": "5.10 Incident Event Types",
+    "text": "5.10 Incident Event Types\nOnly 30% of the congestion in our region is caused by recurring delays. Other sources of delays include holiday peaks, incidents, weather, excess delay at signals, weather, and work zones. Transportation Systems Management and Operations (TSM&O) strategies are need to reduce delays caused by non-recurrent factors.\nThe number of lane closures or other events, such as abandoned vehicles, debris in the roadway, road work, or crashes, increased in 2022.\nThere is no target for the number of events that occur."
   },
   {
     "objectID": "amr2024.html#transit-accessibility",
@@ -292,5 +334,12 @@
     "title": "Annual Mobility Report 2024",
     "section": "9.3 PM3 System Performance",
     "text": "9.3 PM3 System Performance\nThese are measures to assess the performance of the National Highway System (NHS), freight movement on the Interstate System, and Congestion Mitigation and Air Quality Improvement Program. The North Florida TPO has adopted the Florida Department of Transportation performance targets. Reliability refers to a consistent predictable travel time."
+  },
+  {
+    "objectID": "amr2024.html#pm4-transit",
+    "href": "amr2024.html#pm4-transit",
+    "title": "Annual Mobility Report 2024",
+    "section": "9.4 PM4 Transit",
+    "text": "9.4 PM4 Transit\n\n9.4.1 Transit Asset Management\n\n\n9.4.2 Transit Safety"
   }
 ]
