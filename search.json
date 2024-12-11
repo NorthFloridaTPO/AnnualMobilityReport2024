@@ -123,7 +123,7 @@
     "href": "amr2024.html#vehicle-occupancy",
     "title": "Annual Mobility Report 2024",
     "section": "4.4 Vehicle Occupancy",
-    "text": "4.4 Vehicle Occupancy\nEstimates of the average number of occupants in a vehicle is referred to as the Vehicle Occupancy Factors (VOF). This measure can be calculated using person-miles traveled divided by vehicle-miles traveled. For 2022 data, the vehicle occupancy was calculated as 1.64. Crash data taken for the Crash Analysis Reporting System (CAR) is also used in estimating the average vehicle occupancy rate. A technical report titled Vehicle Occupancy Factor and Transit Occupancy Factor Calculation was also completed by the FDOT forecasting and trends office in 2022 (Vehicle Occupancy Factor and Transit Occupancy Factor Calculation)."
+    "text": "4.4 Vehicle Occupancy\nEstimates of the average number of occupants in a vehicle is referred to as the Vehicle Occupancy Factors (VOF). This measure can be calculated using person-miles traveled divided by vehicle-miles traveled. For 2022 data, the vehicle occupancy was calculated as 1.64. Crash data taken for the Crash Analysis Reporting System (CAR) is also used in estimating the average vehicle occupancy rate. A technical report titled Vehicle Occupancy Factor and Transit Occupancy Factor Calculation was also completed by the FDOT forecasting and trends office in 2022 Source: Vehicle Occupancy Factor and Transit Occupancy Factor Calculation"
   },
   {
     "objectID": "amr2024.html#transit-ridership",
@@ -182,18 +182,18 @@
     "text": "5.5 Level of Service\nLevel of Service (LOS) is a rating system of A to F with A being the best – low volume of free-flowing traffic with no delays – and F being the worst – low speeds, volume exceeds capacity with stop-and-go traffic. The FDOT District 2 Level of Service Report was reviewed. The LOS can be evaluated for daily, peak hour or peak period. The number of rural miles meeting generally acceptable operating conditions over the total number of rural road miles can be used to calculate the percent of miles meeting LOS criteria. Standards for LOS on state highways are in the FDOT Multimodal Quality/Level of Service Handbook published in 2023. The service volumes are split up into roadway classification and give specific input for rural areas.\nSource: FDOT District Two, Jacksonville Urban Office"
   },
   {
-    "objectID": "amr2024.html#average-vehicle-delay",
-    "href": "amr2024.html#average-vehicle-delay",
-    "title": "Annual Mobility Report 2024",
-    "section": "5.6 Average Vehicle Delay",
-    "text": "5.6 Average Vehicle Delay\nVehicle delay is typically reported annually in vehicle-hours per day and is calculated by the sum of the daily delay. The FDOT sourcebook shows data provided from HERE technologies and can be summarized for the region, by county, and by functional classification of the roadway. For all highway systems in the North Florida TPO region, the daily vehicle hours of delay increased from 2020 to 2022, but is still below pre-pandemic levels."
-  },
-  {
     "objectID": "amr2024.html#average-commute-time",
     "href": "amr2024.html#average-commute-time",
     "title": "Annual Mobility Report 2024",
-    "section": "5.7 Average Commute Time",
-    "text": "5.7 Average Commute Time\nThe average commute time data was taken from the U.S. Census Bureau through the American Community Survey. The average commute time for each county is shown below (U.S. Census Bureau):\n\nClay: 32.4 minutes\nDuval: 24.4 minutes\nNassau: 30.4 minutes\nSt. Johns: 27.1 minutes"
+    "section": "5.6 Average Commute Time",
+    "text": "5.6 Average Commute Time\nThe average commute time data was taken from the U.S. Census Bureau through the American Community Survey. The average commute times for each county are the following:\n\nClay: 32.4 minutes\nDuval: 24.4 minutes\nNassau: 30.4 minutes\nSt. Johns: 27.1 minutes\n\nSource: U.S. Census Bureau"
+  },
+  {
+    "objectID": "amr2024.html#average-vehicle-delay",
+    "href": "amr2024.html#average-vehicle-delay",
+    "title": "Annual Mobility Report 2024",
+    "section": "5.7 Average Vehicle Delay",
+    "text": "5.7 Average Vehicle Delay\nVehicle delay is typically reported annually in vehicle-hours per day and is calculated by the sum of the daily delay. The FDOT sourcebook shows data provided from HERE technologies and can be summarized for the region, by county, and by functional classification of the roadway. For all highway systems in the North Florida TPO region, the daily vehicle hours of delay increased from 2020 to 2022, but is still below pre-pandemic levels."
   },
   {
     "objectID": "amr2024.html#travel-speeds",
